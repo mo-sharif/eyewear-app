@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>About</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-card  *ngFor="let bg of blog$">
+  <ion-card-header>
+    <ion-card-subtitle>Grabed from Mosh Media</ion-card-subtitle>
+    <ion-card-title>{{bg.title.rendered}}</ion-card-title>
+  </ion-card-header>
+  <ion-img width="50%" [src]="bg['_embedded']['wp:featuredmedia'][0]['media_details'].sizes['full'].source_url" ></ion-img>
+  <ion-card-content>
+          <ion-item href="{{bg.link}}" target="_blank">
+              <ion-icon name="ios-flash" slot="start"></ion-icon>
+              <ion-label>Check it out!</ion-label>
+            </ion-item>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-item>
+    <ion-icon name="pin" slot="start"></ion-icon>
+    <ion-label>ion-item in a card, icon left, button right</ion-label>
+    <ion-button fill="outline" slot="end">View</ion-button>
+  </ion-item>
+
+  <ion-card-content>
+    Great content could be here.
+  </ion-card-content>
+</ion-card>
+</ion-content>

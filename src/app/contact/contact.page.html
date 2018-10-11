@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Contact
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+<ion-card>
+          
+  <form [formGroup]="formData" (ngSubmit)="presentAlert()">
+  
+    <ion-list>
+      <ion-item>
+          <ion-input placeholder="My name" clearInput type="text" formControlName="title"></ion-input>
+        </ion-item>
+    <ion-item>
+        <ion-input placeholder="Something cool about me" clearInput type="text" formControlName="description"></ion-input>
+    </ion-item>
+
+    <div padding>
+      <ion-button color="primary" block type="submit" [disabled]="!formData.valid">Send!</ion-button>
+    </div>
+  </ion-list>
+  </form>
+</ion-card>
+</ion-content>
