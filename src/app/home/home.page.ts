@@ -19,7 +19,7 @@ constructor(public GetJson: GetJsonService, public router: Router){
     });
   }
 onClick(eyewearId){
-  eyewearId++;
+  eyewearId--;
   return this.router.navigate(['/eyewear', { id: eyewearId}]);
 }
 }

@@ -13,9 +13,10 @@
       </ion-row>
     <ion-row>
      
-      <ion-col size="6" size-md *ngFor="let eyewear of eyewearList" padding margin (click)="onClick(eyewear.id)">
-          <ion-img [src]="eyewear.images.frontal" padding></ion-img>
-        <div>
+      <ion-col size="6" size-md *ngFor="let eyewear of eyewearList" (click)="onClick(eyewear.id)">
+          <div padding margin>  
+        <ion-img [src]="eyewear.images.frontal" padding></ion-img>
+        
           <h4  class="title" [innerHTML]="eyewear.brand" no-margin></h4>
           <p  class="subTitle"  [innerHTML]="eyewear.name" no-margin></p>
         </div>
