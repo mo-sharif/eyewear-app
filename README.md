@@ -7,8 +7,7 @@ Product showcase and buy options.
 [Current Dev Tree](https://mosh-media.github.io/eyewear-app/)
 
 # Draft live demo
-
-[https://mosh-media.github.io/eyewear-app/](Live Demo)
+[Draft Demo](https://mosh-media.github.io/eyewear-app/ "Check it out")
 
 # Todos
 
