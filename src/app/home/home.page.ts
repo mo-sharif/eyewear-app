@@ -19,8 +19,8 @@ constructor(public GetJson: GetJsonService, public router: Router){
     });
   }
 onClick(eyewearId){
-
- return this.router.navigate(['home/eyewear/' + eyewearId]);
+  eyewearId++;
+  return this.router.navigate(['/eyewear', { id: eyewearId}]);
 }
 }
   

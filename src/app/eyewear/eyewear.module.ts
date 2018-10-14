@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { EyewearPage } from './eyewear.page';
+import { EyewearComponent } from './eyewear.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { EyewearPage } from './eyewear.page';
     FormsModule,
     RouterModule.forChild([{ path: 'eyewear', component: EyewearPage }])
   ],
-  declarations: [EyewearPage]
+  declarations: [EyewearPage, EyewearComponent]
 })
 export class EyewearPageModule {}
