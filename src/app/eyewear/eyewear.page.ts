@@ -48,7 +48,7 @@ export class EyewearPage implements OnInit {
     
   onClick(eyewearId){
     eyewearId--;
-    return this.router.navigate(['/eyewear', { id: eyewearId }]);
+    return this.router.navigate(['/eyewear/' + eyewearId]);
      //this.router.navigate(['/home/eyewear', eyewearId])
   }
 }

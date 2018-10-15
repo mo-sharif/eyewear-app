@@ -11,7 +11,7 @@ import { EyewearComponent } from './eyewear.component';
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: 'eyewear', component: EyewearPage }])
+    RouterModule.forChild([{ path: '', component: EyewearPage }])
   ],
   declarations: [EyewearPage, EyewearComponent]
 })

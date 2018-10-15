@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GetJsonService} from '../get-json.service'
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -20,7 +21,7 @@ constructor(public GetJson: GetJsonService, public router: Router){
   }
 onClick(eyewearId){
   eyewearId--;
-  return this.router.navigate(['/eyewear', { id: eyewearId}]);
+  return this.router.navigate(['/eyewear/' + eyewearId]);
 }
 }
   
