@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GetJsonService} from '../get-json.service'
+import {GetJsonService} from '../services/get-json.service'
 import { Router } from '@angular/router';
 
 @Component({

@@ -32,6 +32,7 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
+  white:      #fff,
   dark:       #222,
   energized:  #ffc527,
   royal:      #7e60ff,
@@ -71,13 +72,18 @@ $cordova-md-statusbar-padding:           29px;
 
 
   
-  h1.hero {
-    font-family: 'Montserrat-Bold', sans-serif;
-  }
+.hero {
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-size: 11vh;
+  margin-bottom: 50px;
+}
 
-  h4.title {
-    font-family: 'Montserrat-Bold', sans-serif;
-  }
-  p.subTitle {
-    font-family: 'Montserrat-Light', sans-serif;
-  }
+.title {
+  font-family: 'Montserrat-Bold', sans-serif;
+  margin-top: 30px;
+  
+}
+.subTitle {
+  font-family: 'Montserrat-Light', sans-serif;
+}
+

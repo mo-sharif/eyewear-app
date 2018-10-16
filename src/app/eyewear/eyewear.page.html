@@ -10,26 +10,44 @@
     <ion-grid text-center>
 
         <ion-row>
-            <ion-col size="6" size-md justify-content-center	>
+            <ion-col size="12" sizeSm="6" justify-content-center>
             <ion-img [src]="this.frontImg" padding></ion-img>
           </ion-col>
-        <ion-col size="6" size-md justify-content-center	>
+        <ion-col size="12" sizeSm="6" justify-content-center>
             <ion-img [src]="this.sideImg" padding></ion-img>
           </ion-col>
       </ion-row>
 
         <ion-row>
-            <ion-col size="12" size-md justify-content-center	>
+            <ion-col size="12" size-md justify-content-center>
                 <h1 class="hero" [innerHTML]="this.brand"></h1>
                 <p  class="subTitle"  [innerHTML]="this.name" no-margin></p>
                 <p  class="subTitle"  [innerHTML]="this.price" no-margin></p>
             </ion-col>
+  
         </ion-row>
 
         <ion-row>
             <ion-col text-left size="6" size-md justify-content-center	[innerHTML]="this.desc">
             </ion-col>
-  
+            <ion-col size="6" size-md justify-content-center>
+
+                  <ion-list>
+                    <ion-radio-group>
+                      <ion-list-header>
+                        Select Size
+                      </ion-list-header>
+                  
+                      <ion-item *ngFor="let entry of this.sizes">
+                        <ion-label>{{entry}}</ion-label>
+                        <ion-radio [value]="entry" [(ngModel)]="entry.isChecked"></ion-radio>
+                      </ion-item>
+                  
+                    </ion-radio-group>
+                    <ion-button color="dark" (click)="onBuy(this.eyewearList)">BUY NOW</ion-button>
+
+                  </ion-list>
+                </ion-col>
         </ion-row>
 
         <ion-row>
@@ -40,7 +58,7 @@
       <ion-row>
        
         <ion-col size="6" size-md *ngFor="let eyewear of eyewearList" (click)="onClick(eyewear.id)">
-            <div padding margin>  
+            <div>  
             <ion-img [src]="eyewear.images.frontal" padding></ion-img>
        
             <h4  class="title" [innerHTML]="eyewear.brand" no-margin></h4>

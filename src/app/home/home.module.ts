@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-import { EyewearPage } from '../eyewear/eyewear.page'
+
 
 @NgModule({
   imports: [
@@ -12,10 +12,9 @@ import { EyewearPage } from '../eyewear/eyewear.page'
     CommonModule,
     FormsModule,
     RouterModule.forChild([
-    { path: '', component: HomePage },
-    { path: 'eyewear/:id', component: EyewearPage }
+    { path: '', component: HomePage }
   ])
   ],
-  declarations: [HomePage,EyewearPage]
+  declarations: [HomePage]
 })
 export class HomePageModule {}

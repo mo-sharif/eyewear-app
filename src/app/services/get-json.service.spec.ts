@@ -1,5 +1,4 @@
 import { TestBed, inject } from '@angular/core/testing';
-
 import { GetJsonService } from './get-json.service';
 
 describe('GetJsonService', () => {

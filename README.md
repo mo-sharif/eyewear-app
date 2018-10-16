@@ -4,8 +4,8 @@ Built using Ioniv v4
 
 Product showcase and buy options.
 
-# Draft live demo
-[Draft Demo](https://mosh-media.github.io/eyewear-app/ "Check it out")
+# live demo
+[Live Demo](https://mosh-media.github.io/eyewear-app/ "Check it out")
 
 # Todos
 

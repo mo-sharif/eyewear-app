@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {GetJsonService} from '../get-json.service'
+import {GetJsonService} from '../services/get-json.service';
+import {PostService} from '../services/post.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 
@@ -19,15 +20,17 @@ export class EyewearPage implements OnInit {
   public desc: string;
   public brand: string;
   public name: string;
+  public sizes: [''];
 
   constructor(public GetJson: GetJsonService,
      public router: Router, 
-     public route: ActivatedRoute){
+     public route: ActivatedRoute,
+     public postService: PostService){
  
   }
     async ngOnInit() {
 
-    await this.GetJson.getJSon().subscribe(result => {
+     return this.GetJson.getJSon().subscribe(result => {
         
         this.eyewearList = result.eyewear;
         this.selectedEyewear = result.eyewear[this.id],
@@ -37,18 +40,29 @@ export class EyewearPage implements OnInit {
         this.desc = result.eyewear[this.id].description,
         this.brand = result.eyewear[this.id].brand;
         this.name = result.eyewear[this.id].name;
-
-        //this.selectedEyewear = result.eyewear[this.id];
+        this.sizes = result.eyewear[this.id].sizes;
 
       });
 
      
-       
     }
     
-  onClick(eyewearId){
+  async onClick(eyewearId){
     eyewearId--;
-    return this.router.navigate(['/eyewear/' + eyewearId]);
+    return await this.router.navigate(['/eyewear/' + eyewearId]);
+     //this.router.navigate(['/home/eyewear', eyewearId])
+  }
+
+   onBuy(eyewearId){
+    
+    return this.postService.addPost(eyewearId).subscribe(
+      result => {
+          console.log("POST Request is successful ", result);
+      },
+      error => {
+          console.log("Error", error);
+      }
+  );    ;
      //this.router.navigate(['/home/eyewear', eyewearId])
   }
 }

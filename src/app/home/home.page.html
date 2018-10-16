@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="white">
     <ion-title text-center>DITTO</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +14,7 @@
 
     <ion-row>
       <ion-col size="6" size-md *ngFor="let eyewear of eyewearList" (click)="onClick(eyewear.id)">
-          <div padding margin>  
+          <div>  
           <ion-img [src]="eyewear.images.frontal" padding></ion-img>
           <h4  class="title" [innerHTML]="eyewear.brand" no-margin></h4>
           <p  class="subTitle"  [innerHTML]="eyewear.name" no-margin></p>
