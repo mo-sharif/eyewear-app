@@ -54,7 +54,7 @@ export class EyewearPage implements OnInit {
   }
 
    onBuy(eyewearId){
-    
+
     return this.postService.addPost(eyewearId).subscribe(
       result => {
           console.log("POST Request is successful ", result);

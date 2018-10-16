@@ -13,6 +13,5 @@ export class PostService {
 
 addPost (eyewear) {
   return this.http.post('https://httpbin.org/post', eyewear).pipe(map(res => res));
-  
 }
 }
