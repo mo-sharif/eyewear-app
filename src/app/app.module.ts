@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { HttpClientModule} from "@angular/common/http";
-
+import { EyewearService } from './services/eyewear.service';
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { GetJsonService } from './services/get-json.service'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -19,7 +18,7 @@ import { AppComponent } from './app.component';
     IonicModule.forRoot(),
     AppRoutingModule],
   providers: [
-    GetJsonService,
+    EyewearService,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

@@ -10,6 +10,8 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+$break-md: 760px;
+$break-lg: 1200px;
 
 @mixin font($font-family, $font-file) {
   @font-face {
@@ -38,7 +40,8 @@ $colors: (
   royal:      #7e60ff,
   subtle:     #444444,
   vibrant:    rebeccapurple,
-  bright:     #ffc125
+  bright:     #ffc125,
+  lightGray: #5a5a5a ,
 );
 
 
@@ -70,14 +73,31 @@ $checkbox-md-icon-checkmark-color:        #fff;
 // Used to show the status bar for component demos
 $cordova-md-statusbar-padding:           29px;
 
-
+.container { 
+  
+  @media screen and (min-width: $break-lg){
+  margin-right: 18%;
+  margin-left: 18%;
+} 
+@media screen and (max-width: $break-md){
+  margin: 0;padding:0;
+} 
+} 
   
 .hero {
   font-family: 'Montserrat-Bold', sans-serif;
   font-size: 11vh;
   margin-bottom: 50px;
+  @media screen and (max-width: $break-md) {
+    font-size: 5vh;
+  }
 }
+.SmallerHero{
+  font-family: 'Montserrat-Bold', sans-serif;
+  font-size: 6vh;
+  margin-bottom: 50px;
 
+}
 .title {
   font-family: 'Montserrat-Bold', sans-serif;
   margin-top: 30px;
@@ -85,5 +105,53 @@ $cordova-md-statusbar-padding:           29px;
 }
 .subTitle {
   font-family: 'Montserrat-Light', sans-serif;
+  color:#5a5a5a;
+}
+.text {
+  font-family: 'Montserrat-Light', sans-serif;
+  font-weight: bold;
+  color:#5a5a5a;
+}
+.price {
+  font-family: 'Montserrat-Light', sans-serif;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.paragraph{
+  font-family: 'Montserrat-Light', sans-serif;
+}
+.eyewear{
+  &:hover{
+  
+    div{
+      transform: translateZ(2px);
+      box-shadow: 0 4px 16px rgba(0,0,0,.2);
+      border-radius: 5px;
+      cursor: pointer; 
+    }
+
+  }
+      div{
+    padding: 10px;
+  }
+}
+.submit{    
+  width: 230px;
+  font-family: 'Montserrat-Bold', sans-serif;
+  padding:20px;
+  @media screen and (max-width: $break-md) {
+    width:100%;
+  }
+}
+.radio{
+  font-family: 'Montserrat-Light', sans-serif;
+  color:#5a5a5a;
+}
+
+.logo{
+  cursor: pointer; 
+  color: black;
+    text-decoration: none;
 }
 

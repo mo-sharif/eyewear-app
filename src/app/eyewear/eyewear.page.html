@@ -1,14 +1,13 @@
 <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="white">
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
           </ion-buttons>
-      <ion-title text-center>DITTO</ion-title>
+          <ion-title text-center justify-content-center><a href="/"  class="logo">DITTO</a></ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content padding>
-    <ion-grid text-center>
-
+  <ion-content >
+    <ion-grid text-center padding margin class="container">
         <ion-row>
             <ion-col size="12" sizeSm="6" justify-content-center>
             <ion-img [src]="this.frontImg" padding></ion-img>
@@ -22,42 +21,45 @@
             <ion-col size="12" size-md justify-content-center>
                 <h1 class="hero" [innerHTML]="this.brand"></h1>
                 <p  class="subTitle"  [innerHTML]="this.name" no-margin></p>
-                <p  class="subTitle"  [innerHTML]="this.price" no-margin></p>
+                <p  class="price"  [innerHTML]="this.price | currency:'USD':true:'1.0-1'" no-margin></p>
             </ion-col>
   
         </ion-row>
 
         <ion-row>
-            <ion-col text-left size="6" size-md justify-content-center	[innerHTML]="this.desc">
+            <ion-col text-left size="12" sizeSm="6" justify-content-center padding>
+                <ion-list>
+                    <p  class="paragraph" [innerHTML]="this.desc"></p>
+                   </ion-list> 
             </ion-col>
-            <ion-col size="6" size-md justify-content-center>
-
+            <ion-col size="12" sizeSm="6" justify-content-center padding>
                   <ion-list>
-                    <ion-radio-group>
-                      <ion-list-header>
-                        Select Size
-                      </ion-list-header>
-                  
-                      <ion-item *ngFor="let entry of this.sizes">
-                        <ion-label>{{entry}}</ion-label>
-                        <ion-radio [value]="entry" [(ngModel)]="entry.isChecked"></ion-radio>
-                      </ion-item>
-                  
-                    </ion-radio-group>
-                    <ion-button color="dark" (click)="onBuy(this.eyewearList)">BUY NOW</ion-button>
+                        
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                        <ion-item class="text">Select Size</ion-item>      
 
-                  </ion-list>
-                </ion-col>
+                        <ion-radio-group formControlName="sizes">
+                            <ion-item *ngFor="let entry of this.sizes; let i = index"  >
+                                <ion-radio class="radio" color="dark" value="{{entry}}" required>
+                                </ion-radio> {{entry}}
+                            </ion-item>
+                         </ion-radio-group>
+        
+                        <ion-button size="full" class="submit" type="submit" color="dark" [disabled]="!form.valid">BUY NOW</ion-button>
+                        <div *ngIf="form.controls.sizes.errors?.required && form.controls.sizes.touched" class="error">Please pick a size</div>
+                    </form>
+            </ion-list>
+            </ion-col>
         </ion-row>
 
         <ion-row>
-            <ion-col size="12" size-md justify-content-center	>
-                <h1 class="hero">Select Your Eyewear</h1>
+            <ion-col size="12" size-md justify-content-center>
+                <h1 class="SmallerHero">Select Your Eyewear</h1>
             </ion-col>
         </ion-row>
       <ion-row>
        
-        <ion-col size="6" size-md *ngFor="let eyewear of eyewearList" (click)="onClick(eyewear.id)">
+        <ion-col class="eyewear" size="6" size-md *ngFor="let eyewear of eyewearList; let i = index;" (click)="onClick(i)">
             <div>  
             <ion-img [src]="eyewear.images.frontal" padding></ion-img>
        

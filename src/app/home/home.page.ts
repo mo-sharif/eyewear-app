@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GetJsonService} from '../services/get-json.service'
+import {EyewearService} from '../services/eyewear.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,17 +10,17 @@ import { Router } from '@angular/router';
 export class HomePage implements OnInit{
   public eyewearList: any;
 
-constructor(public GetJson: GetJsonService, public router: Router){
+constructor(public eyewearService: EyewearService, public router: Router){
 
 }
   ngOnInit() {
-    this.GetJson.getJSon().subscribe(result => {
-      this.eyewearList = result.eyewear;
+    this.eyewearService.getEyewear().subscribe(res => {
+      this.eyewearList = res['eyewear'];
       console.log(this.eyewearList);
     });
+
   }
 onClick(eyewearId){
-  eyewearId--;
   return this.router.navigate(['/eyewear/' + eyewearId]);
 }
 }
