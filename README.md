@@ -11,10 +11,9 @@ Eyewer showcase and buy options.
 
 [Master tree](https://github.com/Mosh-Media/eyewear-app/tree/master "Check it out")
 
-
-
 # Todos
 
 - [ x ] Routing between products
 - [ x ] Submit product to shopping cart 
 
+```Please check console after clicking the Buy Now button```
