@@ -13,8 +13,8 @@ Eyewer showcase and buy options.
 
 ## Todos
 
-- [ x ] Routing between products
-- [ x ] Submit product to shopping cart 
+- [x] Routing between products
+- [x] Submit product to shopping cart 
 - [ ] Use Observables for get and post data
 - [ ] Fix UX while navigating in Desktop
 - [ ] Center Logo on desktop
