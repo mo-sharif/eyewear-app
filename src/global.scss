@@ -44,7 +44,10 @@ $colors: (
   lightGray: #5a5a5a ,
 );
 
-
+ion-toolbar {
+  --background: #fff;
+  --ion-color-base: #fff !important;
+  }
 
 // App iOS Variables
 // --------------------------------------------------
@@ -62,7 +65,7 @@ $cordova-ios-statusbar-padding:       20px;
 // Material Design only Sass variables can go here
 
 // Change the toolbar background color
-$toolbar-md-background:                   color($colors, primary);
+$toolbar-md-background:                   color($colors, white);
 
 // Change the color of the segment button text
 $toolbar-md-active-color:                 #fff;
@@ -86,16 +89,16 @@ $cordova-md-statusbar-padding:           29px;
   
 .hero {
   font-family: 'Montserrat-Bold', sans-serif;
-  font-size: 11vh;
-  margin-bottom: 50px;
+  font-size: 8vh;
+  margin-bottom: 10px;
   @media screen and (max-width: $break-md) {
-    font-size: 5vh;
+    font-size: 6vh;
   }
 }
 .SmallerHero{
   font-family: 'Montserrat-Bold', sans-serif;
-  font-size: 6vh;
-  margin-bottom: 50px;
+  font-size: 3vh;
+  margin-bottom: 10px;
 
 }
 .title {
@@ -120,6 +123,7 @@ $cordova-md-statusbar-padding:           29px;
 }
 .paragraph{
   font-family: 'Montserrat-Light', sans-serif;
+  line-height: 1.4;
 }
 .eyewear{
   &:hover{
@@ -155,3 +159,4 @@ $cordova-md-statusbar-padding:           29px;
     text-decoration: none;
 }
 
+.toolbar-background{background: #fff !important;}
