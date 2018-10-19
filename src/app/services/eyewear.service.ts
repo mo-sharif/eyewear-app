@@ -25,5 +25,4 @@ export class EyewearService {
     return this.http.get('/assets/eyewear.json')
     .pipe(map(res => res));
     }
-
-      }
+ }

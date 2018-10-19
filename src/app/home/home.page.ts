@@ -16,12 +16,11 @@ constructor(public eyewearService: EyewearService, public router: Router){
   ngOnInit() {
     this.eyewearService.getEyewear().subscribe(res => {
       this.eyewearList = res['eyewear'];
-      console.log(this.eyewearList);
     });
 
   }
 onClick(eyewearId){
-  return this.router.navigate(['/eyewear/' + eyewearId]);
+ this.router.navigate(['/eyewear/' + eyewearId]);
 }
 }
   
