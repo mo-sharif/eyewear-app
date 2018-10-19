@@ -12,11 +12,9 @@ import { Eyewear , EyewearService} from '../services/eyewear.service';
 export class EyewearPage implements OnInit {
   public eyewear : Eyewear;
   public isClicked = [];
-  form: FormGroup;
+  public form: FormGroup;
   public eyewearList: any;
   public id: string;
-  public sizes: [''];
-  public skuid: string;
   public today: any = new Date().toISOString();
 
   constructor(
@@ -36,17 +34,12 @@ export class EyewearPage implements OnInit {
         datetime: [this.today]
       });
        this.eyewearService.getEyewear().subscribe(result => {
-
         this.eyewear = { id : this.id,
           skuid: result['eyewear'][this.id]['sku-id'], 
           sizes: result['eyewear'][this.id].sizes,
-          price: result['eyewear'][this.id].price,
-
+          price: result['eyewear'][this.id].price
          };
-        this.eyewearList = result['eyewear'],
-        this.sizes = result['eyewear'][this.id].sizes;
-        this.skuid = result['eyewear'][this.id]['sku-id'];
-  
+        this.eyewearList = result['eyewear'] 
       });
 
     }
