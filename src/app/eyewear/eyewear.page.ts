@@ -27,8 +27,7 @@ export class EyewearPage implements OnInit {
   public today: any = new Date().toISOString();
 
   constructor(
-     public router: Router, 
-     public route: ActivatedRoute,
+     public router: Router,
      public eyewearService: EyewearService,
      public formBuilder: FormBuilder){
  
