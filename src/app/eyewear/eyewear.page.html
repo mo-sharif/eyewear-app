@@ -44,7 +44,11 @@
                                 </ion-radio> {{entry}}
                             </ion-item>
                          </ion-radio-group>
-        
+             
+                            <ion-input formControlName="skuid" type="hidden" [value]="eyewearList[this.id]['sku-id']"></ion-input>
+                          
+                            <ion-input formControlName="price" type="hidden" [value]="eyewearList[this.id].price"></ion-input>
+
                         <ion-button size="full" class="submit" type="submit" color="dark" [disabled]="!form.valid">BUY NOW</ion-button>
                         <div *ngIf="form.controls.sizes.errors?.required && form.controls.sizes.touched" class="error">Please pick a size</div>
                     </form>

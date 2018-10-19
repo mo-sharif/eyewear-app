@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Eyewear , EyewearService} from '../services/eyewear.service';
+import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-eyewear',
@@ -41,6 +42,13 @@ export class EyewearPage implements OnInit {
          };
         this.eyewearList = result['eyewear'] 
       });
+
+      this.form.valueChanges.pipe(
+        debounceTime(400),
+        distinctUntilChanged(),
+        map(terms => {this.eyewearService.getEyewear();console.log(terms);})
+    ).subscribe( value => value);
+    
 
     }
     
