@@ -14,25 +14,20 @@ export class EyewearPage implements OnInit {
   public isClicked = [];
   form: FormGroup;
   public eyewearList: any;
-  public selectedEyewear:string;
-  public id: string = this.route.snapshot.paramMap.get('id');
-  public sideImg: string
-  public frontImg: string;
-  public price: number;
-  public desc: string;
-  public brand: string;
-  public name: string;
+  public id: string;
   public sizes: [''];
   public skuid: string;
   public today: any = new Date().toISOString();
 
   constructor(
-     public router: Router,
+     public router: Router, 
+     public route: ActivatedRoute,
      public eyewearService: EyewearService,
      public formBuilder: FormBuilder){
  
   }
     ngOnInit() {
+      this.id = this.route.snapshot.paramMap.get('id');
 
       this.form = this.formBuilder.group({
         sizes: ['',Validators.required],
@@ -41,6 +36,7 @@ export class EyewearPage implements OnInit {
         datetime: [this.today]
       });
        this.eyewearService.getEyewear().subscribe(result => {
+
         this.eyewear = { id : this.id,
           skuid: result['eyewear'][this.id]['sku-id'], 
           sizes: result['eyewear'][this.id].sizes,
@@ -48,13 +44,6 @@ export class EyewearPage implements OnInit {
 
          };
         this.eyewearList = result['eyewear'],
-        this.selectedEyewear = result['eyewear'][this.id],
-        this.frontImg = result['eyewear'][this.id].images.frontal,
-        this.sideImg = result['eyewear'][this.id].images.side,
-        this.price = result['eyewear'][this.id].price,
-        this.desc = result['eyewear'][this.id].description,
-        this.brand = result['eyewear'][this.id].brand;
-        this.name = result['eyewear'][this.id].name;
         this.sizes = result['eyewear'][this.id].sizes;
         this.skuid = result['eyewear'][this.id]['sku-id'];
   
