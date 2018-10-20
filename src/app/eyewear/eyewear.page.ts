@@ -40,7 +40,8 @@ export class EyewearPage implements OnInit {
           sizes: result['eyewear'][this.id].sizes,
           price: result['eyewear'][this.id].price
          };
-        this.eyewearList = result['eyewear'] 
+        this.eyewearList = result['eyewear'];
+        console.log(this.eyewearList);
       });
 
       this.form.valueChanges.pipe(
