@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { BlogComponent } from './blog.component';
+import {Camera} from '@ionic-native/camera';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { BlogComponent } from './blog.component';
     { path: '', component: BlogComponent }
   ])
   ],
+  providers: [Camera],
   declarations: [BlogComponent]
 })
 export class BlogPageModule {}
